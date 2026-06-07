@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth scroll-pt-24">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoadMap | Especialistas Automotrices</title>
+    
+    <!-- Tailwind CSS para los estilos modernos y responsive -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configuración de colores personalizados -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        tuerca: {
+                            red: '#dc2626',   // Rojo mecánico
+                            dark: '#111827',  // Negro profundo
+                            gray: '#374151',  // Gris motor
+                            light: '#f3f4f6'  // Gris claro para fondos
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome para los íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-tuerca-light font-sans text-gray-800 antialiased relative">
+
+    <!-- BOTÓN WHATSAPP -->
+    <a href="https://wa.me/56979822362" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition duration-300 z-50 text-3xl flex items-center justify-center h-16 w-16">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- NAVEGACIÓN -->
+    <nav class="bg-tuerca-dark text-white sticky top-0 z-40 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <i class="fas fa-tools text-tuerca-red text-3xl"></i>
+                    <span class="font-bold text-2xl tracking-wider uppercase">Road<span class="text-tuerca-red">Map</span></span>
+                </div>
+                
+                <!-- Menú Desktop -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#inicio" class="hover:text-tuerca-red px-3 py-2 rounded-md font-medium transition">Inicio</a>
+                        <a href="#asistencia-inteligente" class="hover:text-tuerca-red px-3 py-2 rounded-md font-medium transition">Buscar Asistencia Inteligente</a>
+                        <a href="#recomendaciones" class="hover:text-tuerca-red px-3 py-2 rounded-md font-medium transition">Recomendaciones</a>
+                        <a href="#quienessomos" class="hover:text-tuerca-red px-3 py-2 rounded-md font-medium transition">Nosotros</a>
+                        <a href="#contacto" class="bg-tuerca-red hover:bg-red-700 text-white px-4 py-2 rounded-md font-bold transition">Contacto</a>
+                    </div>
+                </div>
+
+                <!-- Botón Menú Móvil -->
+                <div class="-mr-2 flex md:hidden">
+                    <button id="mobile-menu-btn" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-tuerca-gray focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobile-menu" class="hidden md:hidden bg-tuerca-gray">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#inicio" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-tuerca-red">Inicio</a>
+                <a href="#asistencia-inteligente" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-tuerca-red">Buscar Asistencia Inteligente</a>
+                <a href="#recomendaciones" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-tuerca-red">Recomendaciones</a>
+                <a href="#quienessomos" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-tuerca-red">Nosotros</a>
+                <a href="#contacto" class="block px-3 py-2 rounded-md text-base font-medium text-tuerca-red font-bold">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION (BANNER PRINCIPAL) -->
+    <header id="inicio" class="relative bg-tuerca-dark h-[80vh] flex items-center justify-center text-center px-4" 
+            style="background-image: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.9)), url('https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center;">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 uppercase tracking-tight">
+                Encuentra lo que <span class="text-tuerca-red">necesitas</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-10">
+                Busca de manera rápida y ágil cualquier tipo de servicio automotriz dentro de tu zona. 
+            </p>
+            <a href="#buscador" class="inline-block bg-tuerca-red hover:bg-red-700 text-white font-bold text-lg py-4 px-10 rounded-lg shadow-lg hover:shadow-red-500/50 transition transform hover:-translate-y-1">
+                 Ir al buscador
+            </a>
+        </div>
+    </header>
+
+    <!-- SECCIÓN BUSCADOR ROADMAP -->
+    <section id="buscador" class="py-20 bg-tuerca-dark relative overflow-hidden">
+        <!-- Fondo decorativo tipo glassmorphism -->
+        <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-tuerca-red rounded-full mix-blend-multiply filter blur-[128px] opacity-40 animate-pulse"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-white sm:text-4xl">Encuentra Asistencia en Ruta</h2>
+                <div class="h-1 w-20 bg-tuerca-red mx-auto mt-4 mb-6"></div>
+                <p class="text-gray-300 max-w-2xl mx-auto text-lg">Busca talleres, vulcanizaciones o servicios mecánicos cercanos a tu ubicación al instante.</p>
+            </div>
+
+            <!-- Contenedor Glassmorphism -->
+            <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-8 shadow-2xl">
+                
+                <!-- Buscador -->
+                <div class="flex flex-col md:flex-row gap-4 mb-10 max-w-3xl mx-auto">
+                    <div class="relative flex-grow">
+                        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                            <i class="fas fa-search text-gray-400"></i>
+                        </div>
+                        <input type="text" id="searchInput" placeholder="Ingresa tu problema o dirección (ej: Vulcanización Puerto Montt)" 
+                            class="w-full bg-black/30 border border-gray-600 text-white rounded-full py-4 pl-12 pr-14 focus:outline-none focus:border-tuerca-red focus:ring-2 focus:ring-tuerca-red transition placeholder-gray-400 text-lg">
+                        <button id="locationBtn" class="absolute inset-y-0 right-0 pr-5 flex items-center text-gray-400 hover:text-tuerca-red transition cursor-pointer" title="Usar mi ubicación actual">
+                            <i class="fas fa-location-arrow text-xl"></i>
+                        </button>
+                    </div>
+                    <button id="searchBtn" class="bg-gradient-to-r from-tuerca-red to-red-800 hover:from-red-600 hover:to-red-900 text-white font-bold py-4 px-8 rounded-full shadow-lg transform transition hover:scale-105 whitespace-nowrap">
+                        Buscar Ahora
+                    </button>
+                </div>
+
+                <!-- Gadgets Creativos -->
+                <div class="flex flex-wrap justify-center gap-6 mb-10">
+                    <div class="bg-black/20 border border-white/10 rounded-2xl p-4 flex flex-col items-center justify-center min-w-[140px] hover:bg-black/30 transition hover:-translate-y-1">
+                        <i class="fas fa-temperature-half text-tuerca-red text-3xl mb-2"></i>
+                        <span id="temp" class="text-white font-bold text-xl">24°C</span>
+                        <small class="text-gray-400 text-xs uppercase tracking-widest mt-1">Clima</small>
+                    </div>
+                    <div class="bg-black/20 border border-white/10 rounded-2xl p-4 flex flex-col items-center justify-center min-w-[140px] hover:bg-black/30 transition hover:-translate-y-1">
+                        <i class="fas fa-car-burst text-tuerca-red text-3xl mb-2"></i>
+                        <span class="text-white font-bold text-xl">24/7</span>
+                        <small class="text-gray-400 text-xs uppercase tracking-widest mt-1">Asistencia</small>
+                    </div>
+                    <div class="bg-black/20 border border-white/10 rounded-2xl p-4 flex flex-col items-center justify-center min-w-[140px] hover:bg-black/30 transition hover:-translate-y-1">
+                        <i class="fas fa-clock text-tuerca-red text-3xl mb-2"></i>
+                        <span id="clock" class="text-white font-bold text-xl">00:00</span>
+                        <small class="text-gray-400 text-xs uppercase tracking-widest mt-1">Hora Local</small>
+                    </div>
+                </div>
+
+                <!-- Mapa y Resultados -->
+                <div class="flex flex-col lg:flex-row gap-6">
+                    <!-- Mapa -->
+                    <div class="w-full lg:w-2/3 h-[400px] rounded-2xl overflow-hidden border border-white/10 shadow-inner relative bg-black/40">
+                        <iframe id="mapFrame" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+
+                    <!-- Top 3 Resultados -->
+                    <div class="w-full lg:w-1/3 h-[400px] bg-black/20 border border-white/10 rounded-2xl p-6 flex flex-col shadow-inner">
+                        <h3 class="text-white font-bold text-xl mb-4 flex items-center gap-2 border-b border-white/10 pb-3 shrink-0">
+                            <i class="fas fa-star text-tuerca-red"></i> Te podría interesar
+                        </h3>
+                        
+                        <div id="resultsList" class="flex flex-col gap-4 overflow-y-auto pr-2 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-thumb]:bg-tuerca-red [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-black/20 [&::-webkit-scrollbar-track]:rounded-full">
+                            <!-- Los resultados se llenarán con JS -->
+                            <div class="text-gray-400 text-sm text-center mt-10">
+                                Realiza una búsqueda para ver los especialistas recomendados en la zona.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN RECOMENDACIONES -->
+    <section id="recomendaciones" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-tuerca-dark sm:text-4xl">Seguridad y Mecánica Básica</h2>
+                <div class="h-1 w-20 bg-tuerca-red mx-auto mt-4 mb-6"></div>
+                <p class="text-gray-600 text-lg">Consejos esenciales para mantener tu vehículo en óptimas condiciones y evitar imprevistos en la ruta.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Consejo 1 -->
+                <div class="bg-tuerca-light rounded-2xl p-8 shadow-md hover:shadow-xl transition border-t-4 border-tuerca-red flex flex-col items-center text-center">
+                    <div class="bg-white p-4 rounded-full shadow-inner mb-6">
+                        <i class="fas fa-circle-notch text-4xl text-tuerca-red"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-tuerca-dark mb-3">Presión de Neumáticos</h3>
+                    <p class="text-gray-600">Revisa la presión al menos una vez al mes y antes de viajes largos. Neumáticos bien inflados mejoran el agarre, reducen el consumo de combustible y previenen reventones.</p>
+                </div>
+
+                <!-- Consejo 2 -->
+                <div class="bg-tuerca-light rounded-2xl p-8 shadow-md hover:shadow-xl transition border-t-4 border-tuerca-red flex flex-col items-center text-center">
+                    <div class="bg-white p-4 rounded-full shadow-inner mb-6">
+                        <i class="fas fa-oil-can text-4xl text-tuerca-red"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-tuerca-dark mb-3">Niveles de Líquidos</h3>
+                    <p class="text-gray-600">Comprueba periódicamente el aceite del motor, líquido refrigerante, de frenos y limpiaparabrisas. Un motor lubricado y refrigerado es clave para evitar averías graves.</p>
+                </div>
+
+                <!-- Consejo 3 -->
+                <div class="bg-tuerca-light rounded-2xl p-8 shadow-md hover:shadow-xl transition border-t-4 border-tuerca-red flex flex-col items-center text-center">
+                    <div class="bg-white p-4 rounded-full shadow-inner mb-6">
+                        <i class="fas fa-triangle-exclamation text-4xl text-tuerca-red"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-tuerca-dark mb-3">Kit de Emergencia Vial</h3>
+                    <p class="text-gray-600">Lleva siempre en tu maletero: chaleco reflectante, triángulos o balizas, cables pasa corriente, linterna, botiquín básico y una rueda de repuesto en buen estado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN GALERÍA -->
+    <!-- <section id="galeria" class="py-20 bg-tuerca-dark text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold sm:text-4xl">Galería de Asistencias</h2>
+                <div class="h-1 w-20 bg-tuerca-red mx-auto mt-4 mb-6"></div>
+                <p class="text-gray-400 text-lg">Nuestra red de especialistas en acción, brindando ayuda en todo momento.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="overflow-hidden rounded-xl group relative">
+                    <img src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Asistencia 1" class="w-full h-64 object-cover transform transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <span class="text-white font-bold text-lg border-2 border-white px-4 py-2 rounded">Asistencia en Ruta</span>
+                    </div>
+                </div>
+                <div class="overflow-hidden rounded-xl group relative">
+                    <img src="https://images.unsplash.com/photo-1503328427499-d92d1fa3ce46?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Asistencia 2" class="w-full h-64 object-cover transform transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <span class="text-white font-bold text-lg border-2 border-white px-4 py-2 rounded">Mantenimiento</span>
+                    </div>
+                </div>
+                <div class="overflow-hidden rounded-xl group relative">
+                    <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Asistencia 3" class="w-full h-64 object-cover transform transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <span class="text-white font-bold text-lg border-2 border-white px-4 py-2 rounded">Reparación Motor</span>
+                    </div>
+                </div>
+                <div class="overflow-hidden rounded-xl group relative">
+                    <img src="https://images.unsplash.com/photo-1599256621730-535171e28e50?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Asistencia 4" class="w-full h-64 object-cover transform transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <span class="text-white font-bold text-lg border-2 border-white px-4 py-2 rounded">Cambio Neumáticos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN ASISTENCIA INTELIGENTE -->
+    <section id="asistencia-inteligente" class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <!-- Formulario Inteligente de Emergencia (Centrado) -->
+                <div class="bg-tuerca-dark p-8 rounded-lg shadow-lg border border-gray-700 flex flex-col h-full w-full">
+                    <h3 class="text-2xl font-bold text-white mb-4 text-center"><i class="fas fa-bolt text-tuerca-red mr-2"></i>Asistencia Inteligente</h3>
+                    <p class="text-sm text-gray-400 mb-8 text-center">Ingresa tu problema y ubicación para obtener soluciones inmediatas e información vital.</p>
+                    
+                    <form id="smartForm" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2">¿Qué problema tienes?</label>
+                                <select id="problemType" class="w-full bg-gray-800 border border-gray-600 rounded-md py-3 px-4 text-white focus:outline-none focus:border-tuerca-red">
+                                    <option value="mecanico">Falla Mecánica General</option>
+                                    <option value="grua">Necesito una Grúa</option>
+                                    <option value="bateria">Batería Descargada</option>
+                                    <option value="neumatico">Neumático Pinchado</option>
+                                    <option value="choque">Accidente / Choque</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2">Tu Ubicación (Ciudad o Ruta)</label>
+                                <input type="text" id="userLocation" placeholder="Ej: Ruta 5 Sur km 1000, Llanquihue" required class="w-full bg-gray-800 border border-gray-600 rounded-md py-3 px-4 text-white focus:outline-none focus:border-tuerca-red">
+                            </div>
+                        </div>
+                        <button type="submit" class="w-full bg-tuerca-red hover:bg-red-700 text-white font-bold py-4 px-6 rounded-md transition flex justify-center items-center gap-2 text-lg mt-4">
+                            <i class="fas fa-search-location"></i> Buscar Solución Rápida
+                        </button>
+                    </form>
+
+                    <!-- Resultados de Búsqueda Dinámicos -->
+                    <div id="smartResults" class="hidden mt-8 bg-gray-800 border border-gray-600 rounded-md p-6 flex-grow flex flex-col">
+                        <h4 class="text-white font-bold mb-4 border-b border-gray-600 pb-2 text-lg">Resultados Inmediatos:</h4>
+                        <div id="smartInfo" class="text-base text-gray-300 mb-6 bg-gray-900 p-4 rounded border border-gray-700">
+                            <!-- Info generada por JS -->
+                        </div>
+                        <a id="googleMapsLink" href="#" target="_blank" class="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded transition mt-auto text-lg">
+                            <i class="fas fa-map-marked-alt mr-2"></i>Ver Especialistas en Maps
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="quienessomos" class="py-20 bg-tuerca-light relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-gray-800 sm:text-4xl">¿Quiénes somos?</h2>
+                <div class="h-1 w-20 bg-tuerca-red mx-auto mt-4 mb-6"></div>
+                <p class="text-gray-800 max-w-2xl mx-auto text-lg">RoadMap es una plataforma de asistencia técnica que utiliza geolocalización para conectar conductores con una red integral de servicios automotrices.</p>
+            </div>
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-extrabold text-gray-800 sm:text-4xl">¿Qué hacemos?</h3>
+                <div class="h-1 w-20 bg-tuerca-red mx-auto mt-4 mb-6"></div>
+                <p class="text-gray-800 max-w-2xl mx-auto text-lg">Nuestro modelo de negocio se centra en la digitalización de Pymes, potenciando su visibilidad y gestión operativa mediante soluciones tecnológicas accesibles y eficientes para su posicionamiento local.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN PARA EMPRESAS / CONTACTO -->
+    <footer  id="contacto" class="py-16 relative bg-tuerca-dark overflow-hidden border-t border-white/5">
+        <!-- Decoración -->
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 pointer-events-none"></div>
+        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-tuerca-red rounded-full mix-blend-screen filter blur-[100px] opacity-40 animate-pulse"></div>
+        <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-blue-600 rounded-full mix-blend-screen filter blur-[100px] opacity-20"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="bg-white/5 backdrop-blur-lg rounded-3xl p-8 md:p-12 shadow-2xl border border-white/10 flex flex-col md:flex-row items-center justify-between gap-10 hover:border-tuerca-red/50 transition duration-500">
+                <div class="md:w-2/3 text-center md:text-left">
+                    <span class="inline-block py-1 px-3 rounded-full bg-tuerca-red/20 text-tuerca-red font-semibold text-sm mb-4 border border-tuerca-red/30 uppercase tracking-wider">Haz crecer tu negocio</span>
+                    <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6 leading-tight">¿Quieres aparecer en el <span class="text-transparent bg-clip-text bg-gradient-to-r from-tuerca-red to-orange-500">mapa</span>?</h2>
+                    <p class="text-lg text-gray-300 mb-8">Únete a nuestra red de especialistas. Posiciónate en los primeros resultados de búsqueda y captura más clientes mediante recomendaciones directas cuando más lo necesitan en la ruta.</p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
+                        <div class="flex items-center gap-3">
+                            <div class="bg-tuerca-red/20 p-2 rounded-lg shrink-0"><i class="fas fa-map-marked-alt text-tuerca-red w-5 text-center"></i></div>
+                            <span class="text-gray-300 font-medium">Aparición en Google Maps</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="bg-tuerca-red/20 p-2 rounded-lg shrink-0"><i class="fas fa-chart-line text-tuerca-red w-5 text-center"></i></div>
+                            <span class="text-gray-300 font-medium">Mayor Posicionamiento Local</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="bg-tuerca-red/20 p-2 rounded-lg shrink-0"><i class="fas fa-users text-tuerca-red w-5 text-center"></i></div>
+                            <span class="text-gray-300 font-medium">Captación de Nuevos Clientes</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="bg-tuerca-red/20 p-2 rounded-lg shrink-0"><i class="fas fa-star text-tuerca-red w-5 text-center"></i></div>
+                            <span class="text-gray-300 font-medium">Recomendaciones Directas</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/3 flex flex-col items-center">
+                    <div class="bg-black/40 p-6 rounded-2xl border border-white/10 w-full max-w-sm text-center shadow-xl">
+                        <h3 class="text-white font-bold text-xl mb-2">Contáctanos Hoy</h3>
+                        <p class="text-gray-400 text-sm mb-6">Habla con nuestro equipo y descubre los planes para potenciar tu taller o servicio automotriz.</p>
+                        <a href="https://wa.me/56979822362" target="_blank" class="w-full bg-gradient-to-r from-tuerca-red to-red-800 hover:from-red-600 hover:to-red-900 text-white font-bold py-4 px-6 rounded-xl shadow-lg transform transition hover:-translate-y-1 flex items-center justify-center gap-3 group">
+                            <i class="fab fa-whatsapp text-2xl group-hover:scale-110 transition"></i> 
+                            Escríbenos por WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+            <p>&copy; 2026 RoadMap. Proyecto de Infraestructura Cloud AWS - Ingeniería Civil en Informática.</p>
+        </div>
+    </footer>
+    <!-- SCRIPTS (Interacción del sitio) -->
+    <script src="script.js"></script>
+</body>
+</html>
