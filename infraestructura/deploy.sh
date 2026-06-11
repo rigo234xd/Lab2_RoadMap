@@ -1,7 +1,7 @@
 #!/bin/bash
 
 REGION="us-east-1"
-ACCOUNT_ID="NUMERO_DE_CUENTA"
+ACCOUNT_ID="033113129691"
 REPO_NAME="roadmap"
 IMAGE_TAG="1.0"
 FULL_IMAGE_NAME="${ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com/${REPO_NAME}:${IMAGE_TAG}"
@@ -38,7 +38,7 @@ echo "3. Construyendo y subiendo imagen a ECR"
 # Intenta crear el repositorio (si ya existe, ignorará el error)
 aws ecr create-repository --repository-name "$REPO_NAME" 2> /dev/null
 
-docker build -t "${REPO_NAME}:${IMAGE_TAG}" -f ../sitio-web/Dockerfile ..
+docker build -t "${REPO_NAME}:${IMAGE_TAG}" ../sitio-web
 aws ecr get-login-password --region "$REGION" | docker login --username AWS --password-stdin "${ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com"
 docker tag "${REPO_NAME}:${IMAGE_TAG}" "$FULL_IMAGE_NAME"
 docker push "$FULL_IMAGE_NAME"
