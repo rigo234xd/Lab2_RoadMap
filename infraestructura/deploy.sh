@@ -1,7 +1,7 @@
 #!/bin/bash
 
 REGION="us-east-1"
-ACCOUNT_ID="033113129691"
+ACCOUNT_ID="NUMERO_CUENTA"
 REPO_NAME="roadmap"
 IMAGE_TAG="1.0"
 FULL_IMAGE_NAME="${ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com/${REPO_NAME}:${IMAGE_TAG}"
