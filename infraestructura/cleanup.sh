@@ -56,6 +56,29 @@ if [ -n "$TG_ARN" ] && [ "$TG_ARN" != "None" ]; then
     aws elbv2 delete-target-group --target-group-arn "$TG_ARN" --region "$REGION"
 fi
 
+# 6. Eliminar la VPC y sus componentes
+echo "Buscando y eliminando la VPC..."
+VPC_ID=$(aws ec2 describe-vpcs --filters Name=tag:Name,Values=roadmap-vpc --query 'Vpcs[0].VpcId' --output text 2>/dev/null)
+
+if [ -n "$VPC_ID" ] && [ "$VPC_ID" != "None" ]; then
+    echo "Encontrada VPC: $VPC_ID. Eliminando componentes dependientes..."
+    
+    # Eliminar subredes
+    for subnet in $(aws ec2 describe-subnets --filters Name=vpc-id,Values=$VPC_ID --query 'Subnets[*].SubnetId' --output text); do
+        aws ec2 delete-subnet --subnet-id $subnet
+    done
+    
+    # Eliminar Internet Gateway
+    IGW_ID=$(aws ec2 describe-internet-gateways --filters Name=attachment.vpc-id,Values=$VPC_ID --query 'InternetGateways[0].InternetGatewayId' --output text)
+    if [ -n "$IGW_ID" ] && [ "$IGW_ID" != "None" ]; then
+        aws ec2 detach-internet-gateway --internet-gateway-id $IGW_ID --vpc-id $VPC_ID
+        aws ec2 delete-internet-gateway --internet-gateway-id $IGW_ID
+    fi
+    
+    # Finalmente, borrar la VPC
+    aws ec2 delete-vpc --vpc-id $VPC_ID
+    echo "VPC eliminada con éxito."
+fi
 echo "========================================="
 echo "Verificando clústeres activos (Evidencia para el lab):"
 aws ecs list-clusters --region "$REGION"

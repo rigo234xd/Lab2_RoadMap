@@ -21,7 +21,7 @@ Antes de ejecutar el despliegue, asegúrate de tener:
 2.  **AWS CLI** instalado y configurado (`aws configure`) con credenciales activas.
 3.  **Terminal Bash** (Git Bash, WSL en Windows, o nativa en Linux/Mac).
 4.  **Importante (Rol IAM):** Este script asume que la cuenta de AWS ya posee el rol `ecsTaskExecutionRole` activo. Si despliegas en una **cuenta personal nueva**, debes crear este rol previamente para que Fargate tenga permisos de descargar la imagen desde ECR. _(En cuentas de AWS Academy este rol suele venir por defecto)_.
-5.  **Numero de cuenta** una vez creado el repositorio de amazon, debemos poner el numero de cuenta en deploy.sh.
+5.  **Numero de cuenta** Una vez creado el repositorio de amazon, debemos poner el numero de cuenta en deploy.sh.
 
 ## Guía de Despliegue
 
@@ -31,7 +31,7 @@ Sigue estos pasos para levantar la infraestructura completa:
    ```bash
    cd infraestructura
    ```
-2. **Otorga permisos de ejecución**, solo es necesario hacerlo una vez
+2. **Otorga permisos de ejecución**: Solo es necesario hacerlo una vez
    ```bash
    chmod +x deploy.sh cleanup.sh
    ```
@@ -41,5 +41,5 @@ Sigue estos pasos para levantar la infraestructura completa:
    ```
 4. **Limpiamos lo creado**
    ```bash
-   ./deploy.sh
+   ./cleanup.sh
    ```
